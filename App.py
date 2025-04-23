@@ -310,4 +310,4 @@ elif menu == "Learning Path":
         if reply:
             st.markdown(f"🤖: {reply}")
 
->>>>>>> 9b5e4251fd6cd9ed7b316f8fa84c888b5819e84b
+#>>>>>>> 9b5e4251fd6cd9ed7b316f8fa84c888b5819e84b
