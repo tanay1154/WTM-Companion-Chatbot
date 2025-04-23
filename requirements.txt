@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 streamlit 
 google-generativeai
 PyMuPDF
 python-docx
 
+=======
+streamlit 
+google-generativeai
+PyMuPDF
+python-docx
+
+>>>>>>> 9b5e4251fd6cd9ed7b316f8fa84c888b5819e84b
