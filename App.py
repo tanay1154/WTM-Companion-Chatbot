@@ -113,7 +113,7 @@ elif menu == "Mentor Match":
     #             </p>
     #         </div>
     #         """, unsafe_allow_html=True)
-                else: st.warning("No mentors match your filters. Try adjusting the criteria.")
+    #            else: st.warning("No mentors match your filters. Try adjusting the criteria.")
 
                                  
        
