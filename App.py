@@ -97,25 +97,71 @@ elif menu == "Mentor Match":
     st.divider()
     st.subheader("✨ Top Mentor Recommendations")
 
-    if not filtered.empty:
-        for _, mentor in filtered.head(3).iterrows():
-            st.markdown(f"""
-            <div style='padding: 1rem; border: 1px solid #DDD; border-radius: 10px; margin-bottom: 1rem; background-color: #f9f9f9;'>
-                <h4 style="margin-bottom: 0.3rem;">{mentor['name']}</h4>
-                <p style="margin: 0.2rem 0;">
-                    <strong>📍 Location:</strong> {mentor['location']} &nbsp; | &nbsp;
-                    <strong>💼 Field:</strong> {mentor['field']} &nbsp; | &nbsp;
-                    <strong>🚻 Gender:</strong> {mentor['gender']}
-                </p>
-                <p style="margin: 0.2rem 0;">
-                    <strong>📧 Email:</strong> <code>{mentor['email']}</code> &nbsp; | &nbsp;
-                    <strong>🕓 Experience:</strong> {mentor['experience']} years
-                </p>
-            </div>
-            """, unsafe_allow_html=True)
-    else:
-        st.warning("No mentors match your filters. Try adjusting the criteria.")
+    # if not filtered.empty:
+    #     for _, mentor in filtered.head(3).iterrows():
+    #         st.markdown(f"""
+    #         <div style='padding: 1rem; border: 1px solid #DDD; border-radius: 10px; margin-bottom: 1rem; background-color: #f9f9f9;'>
+    #             <h4 style="margin-bottom: 0.3rem;">{mentor['name']}</h4>
+    #             <p style="margin: 0.2rem 0;">
+    #                 <strong>📍 Location:</strong> {mentor['location']} &nbsp; | &nbsp;
+    #                 <strong>💼 Field:</strong> {mentor['field']} &nbsp; | &nbsp;
+    #                 <strong>🚻 Gender:</strong> {mentor['gender']}
+    #             </p>
+    #             <p style="margin: 0.2rem 0;">
+    #                 <strong>📧 Email:</strong> <code>{mentor['email']}</code> &nbsp; | &nbsp;
+    #                 <strong>🕓 Experience:</strong> {mentor['experience']} years
+    #             </p>
+    #         </div>
+    #         """, unsafe_allow_html=True)
+                else: st.warning("No mentors match your filters. Try adjusting the criteria.")
 
+                                 
+       
+if not filtered.empty:
+    for _, mentor in filtered.head(3).iterrows():
+        st.markdown(f"""
+        <div style='
+            padding: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+            background-color: #f1f6f9;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+        '>
+            <h4 style="
+                color: #005f73;
+                margin-bottom: 0.5rem;
+                font-weight: 700;
+                font-size: 1.3rem;
+            ">{mentor['name']}</h4>
+
+            <p style="margin: 0.2rem 0;">
+                <span style="color: #444;"><strong>📍 Location:</strong></span>
+                <span style="color: #000;">{mentor['location']}</span> &nbsp; | &nbsp;
+
+                <span style="color: #444;"><strong>💼 Field:</strong></span>
+                <span style="color: #000;">{mentor['field']}</span> &nbsp; | &nbsp;
+
+                <span style="color: #444;"><strong>🚻 Gender:</strong></span>
+                <span style="color: #000;">{mentor['gender']}</span>
+            </p>
+
+            <p style="margin: 0.2rem 0;">
+                <span style="color: #444;"><strong>📧 Email:</strong></span>
+                <code style="
+                    background-color: #eaf4fc;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    font-size: 0.95rem;
+                ">{mentor['email']}</code> &nbsp; | &nbsp;
+
+                <span style="color: #444;"><strong>🕓 Experience:</strong></span>
+                <span style="color: #000;">{mentor['experience']} years</span>
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+else:
+    st.warning("No mentors match your filters. Try adjusting the criteria.")
 
 # --- LEARNING PATH PAGE ---
 elif menu == "Learning Path":
